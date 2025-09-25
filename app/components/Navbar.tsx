@@ -11,7 +11,7 @@ const Navbar = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
+console.log('Navbar rendered testing');
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
