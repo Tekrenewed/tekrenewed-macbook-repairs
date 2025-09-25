@@ -15,11 +15,12 @@ const Locations = () => {
             whileHover={{ y: -5, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
             className="bg-white rounded-xl shadow-lg p-8"
           >
-            <h3 className="text-2xl font-bold text-primary">Hanwell Workshop</h3>
-            <p className="mt-4 text-dark-text">123 Hanwell High Street<br/>London, W7 3XX</p>
-            <p className="mt-4 text-dark-text">020 8123 4567</p>
+            <h3 className="text-2xl font-bold text-primary">Hanwell</h3>
+            <p className="mt-4 text-dark-text">111 Uxbridge Rd, London W7 3ST</p>
+            <p className="mt-4 text-dark-text">020 3336 3633</p>
             <motion.a 
-              href="#" 
+              href="https://maps.app.goo.gl/pnbdPUQ3cyRTpr6TA" 
+              target="_blank" rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="mt-6 inline-block bg-secondary text-white px-6 py-2 rounded-md font-medium"
@@ -31,11 +32,12 @@ const Locations = () => {
             whileHover={{ y: -5, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
             className="bg-white rounded-xl shadow-lg p-8"
           >
-            <h3 className="text-2xl font-bold text-primary">Ealing Workshop</h3>
-            <p className="mt-4 text-dark-text">456 Ealing Broadway<br/>London, W5 5JU</p>
-            <p className="mt-4 text-dark-text">020 8987 6543</p>
+            <h3 className="text-2xl font-bold text-primary">West Ealing</h3>
+            <p className="mt-4 text-dark-text">16 Broadway, London W13 0SR</p>
+            <p className="mt-4 text-dark-text">020 8840 6420</p>
             <motion.a 
-              href="#" 
+              href="https://maps.app.goo.gl/q9x5ZpobrUeNwpNF6" 
+              target="_blank" rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="mt-6 inline-block bg-secondary text-white px-6 py-2 rounded-md font-medium"

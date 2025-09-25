@@ -1,134 +1,226 @@
-export const repairData = {
-  "MacBook Air M1": {
+export const macbookCategories = {
+  "MacBook Air (2019–2025)": [
+    "MacBook Air 13″ (Intel, 2019)",
+    "MacBook Air 13″ (Intel, 2020)",
+    "MacBook Air 13″ (M1, 2020)",
+    "MacBook Air 13″ (M2, 2022)",
+    "MacBook Air 15″ (M2, 2023)",
+    "MacBook Air 13″ (M3, 2024)",
+    "MacBook Air 15″ (M3, 2024)",
+  ],
+  "MacBook Pro 13″ (2019–2022)": [
+    "MacBook Pro 13″ (Intel, 2019)",
+    "MacBook Pro 13″ (Intel, 2020)",
+    "MacBook Pro 13″ (M1, 2020)",
+    "MacBook Pro 13″ (M2, 2022)",
+  ],
+  "MacBook Pro 14″ (2021–2025)": [
+    "MacBook Pro 14″ (M1 Pro, 2021)",
+    "MacBook Pro 14″ (M1 Max, 2021)",
+    "MacBook Pro 14″ (M2 Pro, 2023)",
+    "MacBook Pro 14″ (M2 Max, 2023)",
+    "MacBook Pro 14″ (M3, 2023)",
+    "MacBook Pro 14″ (M3 Pro, 2023)",
+    "MacBook Pro 14″ (M3 Max, 2023)",
+  ],
+  "MacBook Pro 16″ (2019–2025)": [
+    "MacBook Pro 16″ (Intel, 2019)",
+    "MacBook Pro 16″ (M1 Pro, 2021)",
+    "MacBook Pro 16″ (M1 Max, 2021)",
+    "MacBook Pro 16″ (M2 Pro, 2023)",
+    "MacBook Pro 16″ (M2 Max, 2023)",
+    "MacBook Pro 16″ (M3 Pro, 2023)",
+    "MacBook Pro 16″ (M3 Max, 2023)",
+  ],
+};
+
+export const repairPricing: Record<string, Record<string, Record<string, { diagnosis: string; priceRange: string }>>> = {
+  "MacBook Air 13″ (Intel, 2019)": {
     "Screen": {
-      "Cracked Screen": {
-        "diagnosis": "Full display assembly replacement required.",
-        "priceRange": "£350 - £450"
-      },
-      "Flickering Display": {
-        "diagnosis": "This could be a loose cable or a failing display panel. We'll need to run diagnostics.",
-        "priceRange": "£80 - £450"
-      },
-      "Lines on Screen": {
-        "diagnosis": "Often caused by impact damage, this usually requires a screen replacement.",
-        "priceRange": "£350 - £450"
-      }
+      "Cracked or Damaged Screen": { diagnosis: "Full display assembly replacement is required for any screen damage.", priceRange: "£250 - £450" },
+      "Flickering or Lines on Screen": { diagnosis: "This may be a display panel or logic board issue. A full diagnosis is needed.", priceRange: "£100 - £500" },
     },
     "Battery": {
-      "Doesn't Hold Charge": {
-        "diagnosis": "The battery has reached the end of its life and needs to be replaced.",
-        "priceRange": "£120 - £180"
-      },
-      "Service Recommended Warning": {
-        "diagnosis": "This indicates the battery is degraded. A replacement will restore performance.",
-        "priceRange": "£120 - £180"
-      },
-      "Swollen Battery": {
-        "diagnosis": "A critical issue that requires immediate attention. We will safely remove and replace the swollen battery.",
-        "priceRange": "£140 - £200"
-      }
-    },
-    "Liquid Damage": {
-      "Spilled Water/Coffee/Wine": {
-        "diagnosis": "An ultrasonic cleaning of the logic board is required. Component replacement may be necessary.",
-        "priceRange": "£150 - £600+"
-      },
-      "Not Turning On After Spill": {
-        "diagnosis": "This indicates significant damage. A full diagnostic is needed to assess the logic board and other components.",
-        "priceRange": "£200 - £800+"
-      }
-    },
-    "Performance/Software": {
-      "Running Slow": {
-        "diagnosis": "We can optimize your macOS, check for malware, and recommend potential hardware upgrades like an SSD.",
-        "priceRange": "£80 - £250"
-      },
-      "macOS Issues": {
-        "diagnosis": "A fresh installation of macOS can resolve many software problems.",
-        "priceRange": "£90 - £150"
-      },
-      "Data Recovery": {
-        "diagnosis": "We can attempt to recover data from a failing drive. Success is not guaranteed.",
-        "priceRange": "£150 - £500"
-      }
-    }
-  },
-  "MacBook Pro 14\" M2": {
-    "Screen": {
-      "Cracked Screen": {
-        "diagnosis": "Full display assembly replacement for the Liquid Retina XDR display.",
-        "priceRange": "£600 - £800"
-      },
-      "Display Not Working": {
-        "diagnosis": "Could be the display panel or the logic board. Diagnostics are required.",
-        "priceRange": "£100 - £800"
-      }
-    },
-    "Battery": {
-      "Battery Replacement": {
-        "diagnosis": "Replacement of the integrated battery module.",
-        "priceRange": "£200 - £300"
-      }
+      "Battery Not Holding Charge": { diagnosis: "The battery has reached the end of its life and requires a replacement.", priceRange: "£120 - £150" },
+      "Service Recommended Warning": { diagnosis: "A new battery will resolve the 'Service Recommended' warning.", priceRange: "£120 - £150" },
     },
     "Keyboard & Trackpad": {
-        "Unresponsive Keys": {
-            "diagnosis": "This may require a top case replacement, which includes the keyboard, trackpad, and battery.",
-            "priceRange": "£350 - £500"
-        },
-        "Trackpad Not Clicking": {
-            "diagnosis": "Could be a hardware or software issue. We'll test and determine the cause.",
-            "priceRange": "£80 - £400"
-        }
-    }
-  },
-  "MacBook Pro 13\" Intel": {
-    "Screen": {
-      "Cracked Retina Display": {
-        "diagnosis": "Full display assembly replacement.",
-        "priceRange": "£400 - £550"
-      },
-      "Flexgate / Backlight Issue": {
-        "diagnosis": "A known issue with the display cable. We can often repair the cable without a full screen replacement.",
-        "priceRange": "£150 - £250"
-      }
-    },
-    "Battery": {
-      "Standard Battery Replacement": {
-        "diagnosis": "New battery to restore performance and battery life.",
-        "priceRange": "£130 - £190"
-      }
+      "Unresponsive Keys": { diagnosis: "This model may have a butterfly keyboard; a full top case replacement is often necessary.", priceRange: "£250 - £350" },
+      "Trackpad Not Clicking": { diagnosis: "A trackpad replacement or adjustment will restore functionality.", priceRange: "£100 - £180" },
     },
     "Liquid Damage": {
-        "Full Logic Board Cleaning": {
-            "diagnosis": "Ultrasonic cleaning to remove corrosion from the main logic board.",
-            "priceRange": "£150 - £500"
-        }
-    },
-    "Keyboard & Trackpad": {
-        "Butterfly Keyboard Issues": {
-            "diagnosis": "We can replace individual keys or the entire keyboard assembly.",
-            "priceRange": "£100 - £450"
-        }
-    }
-  },
-  "MacBook Air Retina": {
-    "Screen": {
-      "Cracked Screen": {
-        "diagnosis": "Full display assembly replacement.",
-        "priceRange": "£300 - £400"
-      }
-    },
-    "Battery": {
-      "Battery Replacement": {
-        "diagnosis": "New battery to resolve charging issues.",
-        "priceRange": "£110 - £170"
-      }
+      "Liquid Spill Diagnostic": { diagnosis: "A comprehensive internal inspection and ultrasonic cleaning to assess the extent of the damage.", priceRange: "£150 - £600+" },
     },
     "Performance/Software": {
-        "Slow Performance": {
-            "diagnosis": "Could be software-related or a failing SSD. Diagnostics needed.",
-            "priceRange": "£80 - £300"
-        }
-    }
-  }
+      "Running Slow or Crashing": { diagnosis: "We will perform software optimisation, check for malware, and test hardware components.", priceRange: "£80 - £250" },
+    },
+  },
+  "MacBook Air 13″ (Intel, 2020)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£380 - £480" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£130 - £160" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£280 - £380" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£180 - £650+" } },
+    "Performance/Software": { "Slow Performance": { diagnosis: "Software optimisation or potential hardware issue.", priceRange: "£80 - £250" } },
+  },
+  "MacBook Air 13″ (M1, 2020)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£400 - £500" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£150 - £190" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£300 - £400" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£200 - £700+" } },
+    "Performance/Software": { "macOS Issues": { diagnosis: "Operating system reinstall and data migration.", priceRange: "£100 - £200" } },
+  },
+  "MacBook Air 13″ (M2, 2022)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£450 - £550" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£180 - £220" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£320 - £420" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£220 - £750+" } },
+    "Performance/Software": { "Data Recovery": { diagnosis: "Attempt to recover data from a non-functional device.", priceRange: "£250 - £800" } },
+  },
+  "MacBook Air 15″ (M2, 2023)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£550 - £650" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£200 - £250" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£350 - £450" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£250 - £800+" } },
+    "Performance/Software": { "Slow Performance": { diagnosis: "Software optimisation or potential hardware issue.", priceRange: "£90 - £280" } },
+  },
+  "MacBook Air 13″ (M3, 2024)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£500 - £600" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£190 - £240" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£340 - £440" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£240 - £800+" } },
+    "Performance/Software": { "macOS Issues": { diagnosis: "Operating system reinstall and data migration.", priceRange: "£100 - £220" } },
+  },
+  "MacBook Air 15″ (M3, 2024)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£600 - £700" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£220 - £270" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£370 - £470" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£270 - £850+" } },
+    "Performance/Software": { "Data Recovery": { diagnosis: "Attempt to recover data from a non-functional device.", priceRange: "£300 - £900" } },
+  },
+  "MacBook Pro 13″ (Intel, 2019)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£400 - £550" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£140 - £180" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£300 - £400" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£200 - £700+" } },
+    "Performance/Software": { "Slow Performance": { diagnosis: "Software optimisation or potential hardware issue.", priceRange: "£90 - £300" } },
+  },
+  "MacBook Pro 13″ (Intel, 2020)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£420 - £580" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£150 - £190" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£320 - £420" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£220 - £750+" } },
+    "Performance/Software": { "macOS Issues": { diagnosis: "Operating system reinstall and data migration.", priceRange: "£100 - £220" } },
+  },
+  "MacBook Pro 13″ (M1, 2020)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£450 - £600" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£170 - £210" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£340 - £440" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£240 - £800+" } },
+    "Performance/Software": { "Data Recovery": { diagnosis: "Attempt to recover data from a non-functional device.", priceRange: "£300 - £900" } },
+  },
+  "MacBook Pro 13″ (M2, 2022)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£500 - £650" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£190 - £240" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£360 - £460" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£260 - £850+" } },
+    "Performance/Software": { "Slow Performance": { diagnosis: "Software optimisation or potential hardware issue.", priceRange: "£100 - £320" } },
+  },
+  "MacBook Pro 14″ (M1 Pro, 2021)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£600 - £750" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£220 - £280" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£380 - £480" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£280 - £900+" } },
+    "Performance/Software": { "macOS Issues": { diagnosis: "Operating system reinstall and data migration.", priceRange: "£120 - £250" } },
+  },
+  "MacBook Pro 14″ (M1 Max, 2021)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£650 - £800" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£230 - £290" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£390 - £490" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£300 - £950+" } },
+    "Performance/Software": { "Data Recovery": { diagnosis: "Attempt to recover data from a non-functional device.", priceRange: "£350 - £1000" } },
+  },
+  "MacBook Pro 14″ (M2 Pro, 2023)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£700 - £850" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£240 - £300" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£400 - £500" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£320 - £1000+" } },
+    "Performance/Software": { "Slow Performance": { diagnosis: "Software optimisation or potential hardware issue.", priceRange: "£120 - £350" } },
+  },
+  "MacBook Pro 14″ (M2 Max, 2023)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£750 - £900" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£250 - £310" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£410 - £510" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£340 - £1050+" } },
+    "Performance/Software": { "macOS Issues": { diagnosis: "Operating system reinstall and data migration.", priceRange: "£120 - £250" } },
+  },
+  "MacBook Pro 14″ (M3, 2023)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£720 - £880" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£260 - £320" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£420 - £520" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£360 - £1100+" } },
+    "Performance/Software": { "Data Recovery": { diagnosis: "Attempt to recover data from a non-functional device.", priceRange: "£400 - £1100" } },
+  },
+  "MacBook Pro 14″ (M3 Pro, 2023)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£780 - £950" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£270 - £330" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£430 - £530" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£380 - £1150+" } },
+    "Performance/Software": { "Slow Performance": { diagnosis: "Software optimisation or potential hardware issue.", priceRange: "£130 - £380" } },
+  },
+  "MacBook Pro 14″ (M3 Max, 2023)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£850 - £1050" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£280 - £340" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£440 - £540" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£400 - £1200+" } },
+    "Performance/Software": { "macOS Issues": { diagnosis: "Operating system reinstall and data migration.", priceRange: "£130 - £280" } },
+  },
+  "MacBook Pro 16″ (Intel, 2019)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£650 - £800" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£200 - £250" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£380 - £480" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£300 - £950+" } },
+    "Performance/Software": { "Data Recovery": { diagnosis: "Attempt to recover data from a non-functional device.", priceRange: "£350 - £1000" } },
+  },
+  "MacBook Pro 16″ (M1 Pro, 2021)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£700 - £900" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£240 - £300" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£400 - £500" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£350 - £1100+" } },
+    "Performance/Software": { "Slow Performance": { diagnosis: "Software optimisation or potential hardware issue.", priceRange: "£140 - £400" } },
+  },
+  "MacBook Pro 16″ (M1 Max, 2021)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£750 - £950" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£250 - £310" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£410 - £510" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£380 - £1150+" } },
+    "Performance/Software": { "macOS Issues": { diagnosis: "Operating system reinstall and data migration.", priceRange: "£140 - £300" } },
+  },
+  "MacBook Pro 16″ (M2 Pro, 2023)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£800 - £1000" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£260 - £320" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£420 - £520" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£400 - £1200+" } },
+    "Performance/Software": { "Data Recovery": { diagnosis: "Attempt to recover data from a non-functional device.", priceRange: "£400 - £1200" } },
+  },
+  "MacBook Pro 16″ (M2 Max, 2023)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£850 - £1100" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£270 - £330" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£430 - £530" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£420 - £1250+" } },
+    "Performance/Software": { "Slow Performance": { diagnosis: "Software optimisation or potential hardware issue.", priceRange: "£150 - £450" } },
+  },
+  "MacBook Pro 16″ (M3 Pro, 2023)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£900 - £1150" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£280 - £340" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£440 - £540" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£440 - £1300+" } },
+    "Performance/Software": { "macOS Issues": { diagnosis: "Operating system reinstall and data migration.", priceRange: "£150 - £320" } },
+  },
+  "MacBook Pro 16″ (M3 Max, 2023)": {
+    "Screen": { "Cracked Screen": { diagnosis: "Full display assembly replacement.", priceRange: "£950 - £1250" } },
+    "Battery": { "Battery Replacement": { diagnosis: "Replacement of aged or failing battery.", priceRange: "£290 - £350" } },
+    "Keyboard & Trackpad": { "Keyboard Not Responding": { diagnosis: "Full top case replacement.", priceRange: "£450 - £550" } },
+    "Liquid Damage": { "Full Diagnostic": { diagnosis: "Internal inspection and cleaning.", priceRange: "£460 - £1350+" } },
+    "Performance/Software": { "Data Recovery": { diagnosis: "Attempt to recover data from a non-functional device.", priceRange: "£450 - £1400" } },
+  },
 };

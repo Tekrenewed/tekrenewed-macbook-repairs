@@ -1,5 +1,7 @@
 'use client';
 
+import { FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa'; // Import icons
+
 const Footer = () => {
   return (
     <footer className="bg-primary text-white">
@@ -12,20 +14,44 @@ const Footer = () => {
           <div className="grid grid-cols-2 gap-8">
             <div>
               <h4 className="font-bold">Hanwell Workshop</h4>
-              <p className="text-sm text-gray-300 mt-2">123 Hanwell High Street<br/>London, W7 3XX<br/>020 8123 4567</p>
+              <p className="text-sm text-gray-300 mt-2">111 Uxbridge Rd, London W7 3ST<br/>020 3336 3633</p>
             </div>
             <div>
-              <h4 className="font-bold">Ealing Workshop</h4>
-              <p className="text-sm text-gray-300 mt-2">456 Ealing Broadway<br/>London, W5 5JU<br/>020 8987 6543</p>
+              <h4 className="font-bold">West Ealing</h4>
+              <p className="text-sm text-gray-300 mt-2">16 Broadway, London W13 0SR<br/>020 8840 6420</p>
             </div>
           </div>
           <div>
             <h4 className="font-bold">Follow Us</h4>
-            <div className="flex space-x-4 mt-2">
-              {/* Placeholder social links */}
-              <a href="#" className="text-gray-300 hover:text-white">Twitter</a>
-              <a href="#" className="text-gray-300 hover:text-white">Facebook</a>
-              <a href="#" className="text-gray-300 hover:text-white">Instagram</a>
+            {/* Replaced social links */}
+            <div className="flex items-center gap-x-6 mt-2">
+              <a
+                href="https://www.facebook.com/people/TekRenewed/61574769921770/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="text-gray-400 hover:text-secondary transition-colors duration-300"
+              >
+                <FaFacebook size={24} />
+              </a>
+              <a
+                href="https://www.instagram.com/tekrenewed25/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-gray-400 hover:text-secondary transition-colors duration-300"
+              >
+                <FaInstagram size={24} />
+              </a>
+              <a
+                href="https://www.tiktok.com/@tekrenewed.ltd"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                className="text-gray-400 hover:text-secondary transition-colors duration-300"
+              >
+                <FaTiktok size={24} />
+              </a>
             </div>
           </div>
         </div>

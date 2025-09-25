@@ -19,7 +19,7 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
           className="text-4xl font-display font-bold tracking-tight sm:text-5xl md:text-6xl"
         >
-          Expert MacBook Repair Across West London
+          MacBook Down? Get It Fixed Today.
         </motion.h1>
         <motion.p 
           initial={{ opacity: 0, y: 20 }} 
@@ -27,7 +27,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-gray-300"
         >
-          From cracked screens to battery replacements and liquid damage, our certified technicians provide fast, expert service to get you back to work.
+          Visit our Ealing or Hanwell workshops for a free, on-the-spot diagnosis. Most repairs are done in just a few hours.
         </motion.p>
         <motion.div 
           initial={{ opacity: 0, y: 20 }} 
